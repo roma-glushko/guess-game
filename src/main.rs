@@ -22,7 +22,7 @@ fn main() {
             Err(_) => continue,
         };
 
-        num_tries = num_tries + 1;
+        num_tries += 1;
 
         match guess.cmp(&secret_num) {
             Ordering::Less => println!("Too small ⬆️"),
