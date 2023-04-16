@@ -15,11 +15,15 @@ fn main() {
 
         io::stdin()
             .read_line(&mut guess)
-            .expect("A number was expected!");
+            .expect("❌ A number was expected!");
 
         let guess: u32 = match guess.trim().parse() {
             Ok(num) => num,
-            Err(_) => continue,
+            Err(_) => {
+                println!("❌ No, enter a number");
+
+                continue;
+            }
         };
 
         num_tries += 1;
